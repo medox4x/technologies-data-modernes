@@ -1,0 +1,19 @@
+services:
+  minio:
+    image: pgsty/minio:latest
+    container_name: minio
+
+    command: server /data --console-address ":9001"
+
+    environment:
+      MINIO_ROOT_USER: MedoDataEng
+      MINIO_ROOT_PASSWORD: MedoDataEng
+
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+
+    volumes:
+      - minio_data:/data
+volumes:
+  minio_data:
