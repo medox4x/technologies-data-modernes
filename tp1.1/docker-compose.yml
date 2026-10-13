@@ -1,0 +1,5 @@
+services:
+  kafka:
+    image: apache/kafka:3.8.0     # nœud unique en mode KRaft (sans ZooKeeper)
+    container_name: kafka
+    ports: ["9092:9092"]
